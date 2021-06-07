@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import AVFoundation
 
 class ViewController: UIViewController {
     
@@ -49,6 +50,30 @@ class ViewController: UIViewController {
     
     
     @IBAction func lireMessage(_ sender: Any) {
+        //vérification que le texte
+        
+        
+        //importation du Framework AVfondation
+        
+        //Déclaration de l'utterance et du speech
+        
+        
+        guard let resultat = resultatLabel.text else {
+            return
+        }
+        
+        
+        
+        
+        let speech = AVSpeechSynthesizer()
+        
+        //création d'une utérrance
+        let utterance = AVSpeechUtterance(string: resultat)
+        utterance.rate = 0.5
+        utterance.voice = AVSpeechSynthesisVoice.init(language: "fr_FR")
+        speech.speak(utterance)
+        
+        
     }
 }
 
